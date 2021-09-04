@@ -333,10 +333,9 @@ def Test(data2, x_name, y_name, x_type, y_type, groups, normal=''):
             # + 'F=' + str(round(aov_test[0],2)) + ',P value=' + str(round(aov_test[1],2)) +"\nReject hypothesis, There is a significant difference of the baby's weight between smoking mothers and non-smoking mothers during pregnancy."
             alpha = 0.05
             if (aov_test[1] < alpha):
-                 words = words +'  '
-                            #  words = words + '\nReject hypothesis，%s has significant difference with %s.' % (cate.name, nums.name)
+                words = words + '\nP<α，%s has significant difference with %s.\n' % (cate.name, nums.name) + '\n'
             else:
-                words = words + '\nAccept hypothesis，%s has no significant difference with %s.' % (cate.name, nums.name)
+                words = words + '\nP>α，%s has no significant difference with %s.\n' % (cate.name, nums.name) + '\n'
         else:
             words = 'Error, Please re-select'
     except:
